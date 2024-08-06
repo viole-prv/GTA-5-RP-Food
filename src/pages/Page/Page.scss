@@ -1,0 +1,15 @@
+.page {
+
+  > .food__recipe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > .food:nth-child(1) {
+      &::after,
+      &::before {
+        content: none;
+      }
+    }
+  }
+}

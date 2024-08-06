@@ -1,0 +1,28 @@
+.home {
+  padding: 25px;
+
+  &__query {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: 100;
+    transition: opacity .5s ease-out;
+  }
+
+  &__food-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    transition: opacity .5s ease-out;
+
+    > .food {
+      &::after,
+      &::before {
+        content: none;
+      }
+    }
+  }
+}
