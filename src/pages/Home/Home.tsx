@@ -44,7 +44,12 @@ const Home = () => {
     const memoFood = useMemo(() => {
         return Object.keys(foodList)
             .filter((name) => name.toLowerCase().includes(query.toLowerCase()))
-            .map((name) => <Food name={name} />);
+            .map((name) => (
+                <Food
+                    key={name}
+                    name={name}
+                />
+            ));
     }, [query]);
 
     return (
