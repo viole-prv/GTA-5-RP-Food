@@ -11,22 +11,24 @@ type Props = {
 };
 
 const Food: FC<Props> = ({ name, children }) => {
+    const isActive = name in foodList;
+
     return (
         <li className="food">
-            <div className="food__info">
-                {name in foodList && (
-                    <Link
-                        className="info__image"
-                        to={name}
-                    >
+            <Link
+                className={`food__info ${isActive ? "" : "inactive"}`}
+                to={`/${name}`}
+            >
+                {isActive && (
+                    <div className="info__image">
                         <img
                             alt={name}
                             src={`${process.env.PUBLIC_URL}/img/${name}.png`}
                         />
-                    </Link>
+                    </div>
                 )}
                 <span className="info__name">{name}</span>
-            </div>
+            </Link>
             {children && <ul className="food__recipe">{children}</ul>}
         </li>
     );
