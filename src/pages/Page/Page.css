@@ -1,0 +1,10 @@
+.page > .food__recipe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page > .food__recipe > .food:nth-child(1)::after, .page > .food__recipe > .food:nth-child(1)::before {
+  content: none;
+}
+
+/*# sourceMappingURL=Page.css.map */

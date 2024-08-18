@@ -1,0 +1,112 @@
+.food {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 15px 0;
+
+  &:before {
+    content: "";
+    height: 100%;
+    width: 10px;
+    position: absolute;
+    top: 0;
+    left: -25px;
+    border-left: 1px solid #ccc;
+  }
+
+  &:after {
+    content: "";
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    border-top: 1px solid #ccc;
+    margin-top: 1px;
+  }
+
+  &:first-child {
+    &:before {
+      height: 50%;
+      top: 50%;
+      border-radius: 10px 0 0 0;
+    }
+
+    &:after {
+      height: 10px;
+      border-radius: 10px 0 0 0;
+    }
+  }
+
+  &:last-child {
+    &:before {
+      height: 50%;
+      border-radius: 0 0 0 10px;
+    }
+
+    &:after {
+      height: 10px;
+      border-top: none;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0 0 0 10px;
+      margin-top: -10px;
+    }
+  }
+
+  &__info {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+
+    &.inactive {
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
+    .info__image {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        font-size: 0;
+      }
+    }
+
+    .info__name {
+      color: #000;
+      font-size: 12px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+
+  &__recipe {
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+
+    &:not(:first-child) {
+      &:after {
+        content: "";
+        width: 25px;
+        position: absolute;
+        top: 50%;
+        left: 150px;
+        border-top: 1px solid #ccc;
+        margin-top: 1px;
+      }
+    }
+  }
+}
