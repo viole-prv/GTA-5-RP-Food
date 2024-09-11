@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/GTA-5-RP-Food/static/css/main.d8cd6b6f.css",
-    "main.js": "/GTA-5-RP-Food/static/js/main.fcb6cad2.js",
+    "main.css": "/GTA-5-RP-Food/static/css/main.b0c06c1b.css",
+    "main.js": "/GTA-5-RP-Food/static/js/main.40cb5e94.js",
     "index.html": "/GTA-5-RP-Food/index.html",
-    "main.d8cd6b6f.css.map": "/GTA-5-RP-Food/static/css/main.d8cd6b6f.css.map",
-    "main.fcb6cad2.js.map": "/GTA-5-RP-Food/static/js/main.fcb6cad2.js.map"
+    "main.b0c06c1b.css.map": "/GTA-5-RP-Food/static/css/main.b0c06c1b.css.map",
+    "main.40cb5e94.js.map": "/GTA-5-RP-Food/static/js/main.40cb5e94.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8cd6b6f.css",
-    "static/js/main.fcb6cad2.js"
+    "static/css/main.b0c06c1b.css",
+    "static/js/main.40cb5e94.js"
   ]
 }
