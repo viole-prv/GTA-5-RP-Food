@@ -5,23 +5,62 @@ import Food from "../../components/Food/Food";
 
 import "./Home.scss";
 
+interface ITransform {
+    [key: string]: string;
+}
+
+const transformList: ITransform = {
+    Q: "Й",
+    W: "Ц",
+    E: "У",
+    R: "К",
+    T: "Е",
+    Y: "Н",
+    U: "Г",
+    I: "Ш",
+    O: "Щ",
+    P: "З",
+    A: "Ф",
+    S: "Ы",
+    D: "В",
+    F: "А",
+    G: "П",
+    H: "Р",
+    J: "О",
+    K: "Л",
+    L: "Д",
+    Z: "Я",
+    X: "Ч",
+    C: "С",
+    V: "М",
+    B: "И",
+    N: "Т",
+    M: "Ь",
+};
+
 const Home = () => {
     const [query, setQuery] = useState("");
     const [opacity, setOpacity] = useState(0);
 
+    const toTransform = (key: string): string =>
+        key
+            .split("")
+            .map((char) => transformList[char] || char)
+            .join("");
+
     useEffect(() => {
         const onKeyDown = (e: KeyboardEvent) => {
-            const _ = e.key.toUpperCase();
+            const key = e.key.toUpperCase();
 
-            if (((e.ctrlKey || e.metaKey) && _ === "F") || _ === "F3") {
+            if (((e.ctrlKey || e.metaKey) && key === "F") || key === "F3") {
                 e.preventDefault();
 
                 return;
             }
 
-            if (_.length === 1) {
-                setQuery((query) => query + _);
-            } else if (_ === "BACKSPACE") {
+            if (key.length === 1) {
+                setQuery((query) => query + toTransform(key));
+            } else if (key === "BACKSPACE") {
                 setQuery((query) => query.slice(0, -1));
             }
         };
